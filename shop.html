@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop - Spice World</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/LG1.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<style>
+		/* Product List Container */
+		#product-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px;
+			padding: 10px;
+		}
+
+		/* Product Card */
+		.product-card {
+			background: white;
+			border-radius: 16px !important;
+			/* Less rounded */
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			width: 250px;
+			padding: 15px;
+			text-align: center;
+			transition: transform 0.3s ease;
+			cursor: pointer;
+			position: relative;
+			padding-top: 10px !important;
+		}
+
+		.product-card:hover {
+			transform: scale(1.03);
+		}
+
+		.image-wrapper {
+			position: relative;
+			width: 100%;
+			height: 200px;
+			overflow: hidden;
+		}
+
+		.product-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: opacity 0.4s ease;
+		}
+
+		.hover-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+
+		.hover-effect:hover .hover-img {
+			opacity: 1;
+		}
+
+		.hover-effect:hover .default-img {
+			opacity: 0;
+		}
+
+		.product-name {
+			font-size: 1.1em;
+			margin: 10px 0 5px;
+			font-weight: bold;
+		}
+
+		.product-category,
+		.product-price,
+		.product-stock {
+			font-size: 0.9em !important;
+			color: #555;
+			margin-bottom: 5px;
+		}
+
+		/* Inquire Button - Normal Cards */
+		.card-inquire-btn {
+			background: #28a745;
+			color: white;
+			border: none;
+			padding: 8px 19px;
+			/* Smaller padding */
+			border-radius: 12px;
+			/* Less rounded */
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.card-inquire-btn:hover {
+			background: #218838;
+			padding: 8px 26px;
+			/* Smaller padding */
+		}
+
+		/* Modal Styles */
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			justify-content: center;
+			align-items: center;
+			overflow: auto;
+		}
+
+		.modal-content {
+			background: white;
+			border-radius: 8px;
+			/* Less rounded */
+			width: 90%;
+			max-width: 700px;
+			max-height: 90%;
+			overflow-y: auto;
+			position: relative;
+			padding: 20px;
+			animation: fadeIn 0.3s ease-in-out;
+		}
+
+		.modal-image-container {
+			position: relative;
+			width: 100%;
+			height: 400px;
+			overflow: hidden;
+			margin-bottom: 20px;
+		}
+
+		.modal-slide {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			display: none;
+		}
+
+		/* Slideshow Buttons */
+		.slide-btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
+			font-size: 2em;
+			border: none;
+			padding: 0 12px;
+			cursor: pointer;
+			z-index: 2;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.slide-btn.left {
+			left: 10px;
+		}
+
+		.slide-btn.right {
+			right: 10px;
+		}
+
+		.slide-btn:active {
+			background-color: rgba(0, 0, 0, 0.57);
+			/* Darker background on click */
+		}
+
+		/* Modal Details */
+		.modal-details {
+			text-align: center;
+		}
+
+		.modal-details h2 {
+			margin-bottom: 10px;
+			font-size: 1.5em;
+		}
+
+		.modal-details p {
+			margin-bottom: 8px;
+			color: #333;
+		}
+
+		.modal-inquire-btn {
+			background: #28a745;
+			color: white;
+			padding: 10px 22px;
+			/* Slightly bigger button */
+			border: none;
+			border-radius: 8px;
+			/* Less rounded */
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.modal-inquire-btn:hover {
+			background: #218838;
+			padding: 10px 28px;
+			/* Slightly bigger button */
+		}
+
+		/* Close Modal on Clicking Outside */
+		.modal {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.7);
+			justify-content: center;
+			align-items: center;
+		}
+
+		.modal-content {
+			width: 90%;
+			max-width: 800px;
+			padding: 20px;
+			background: white;
+			border-radius: 8px;
+		}
+
+		/* Animations */
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: scale(0.9);
+			}
+
+			to {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		/* Responsive - Multiple Cards Per Row */
+		@media (min-width: 600px) {
+			.product-card {
+				width: 220px;
+			}
+		}
+
+		@media (min-width: 768px) {
+			.product-card {
+				width: 240px;
+			}
+		}
+
+		@media (min-width: 1024px) {
+			.product-card {
+				width: 250px;
+			}
+		}
+
+		/* Mobile Styles */
+		@media (max-width: 600px) {
+			.modal-image-container {
+				height: 250px;
+			}
+
+			/* Stack cards in smaller rows for better readability */
+			#product-list {
+				justify-content: space-around;
+			}
+
+			.product-card {
+				width: 90%;
+			}
+		}
+
+		/* Category Description Styles with Image in Corner */
+		#category-description {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			/*  background-color: #f9f9f9;
+    padding: 30px;*/
+			/* border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+			margin-top: 5px !important;
+			padding-bottom: 15px !important;
+
+		}
+
+		#category-description .description {
+			flex: 1;
+			padding-right: 20px;
+		}
+
+		#category-description h2 {
+			font-size: 2rem;
+			font-weight: 600;
+			color: #0e6835;
+			margin-bottom: 15px;
+		}
+
+		#category-description p {
+			font-size: 1rem;
+			color: #666;
+			line-height: 1.6;
+		}
+
+		#category-description .image-wrapper {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			margin-left: 20px;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		}
+
+		#category-description .image-wrapper img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.highlight {
+			font-weight: 600;
+			color: #444;
+		}
+
+		h3 {
+			color: #4a4e4a;
+
+			font-size: 20px;
+			font-weight: 560;
+			
+
+
+
+
+		}
+				.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  margin-right: 8px;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebc5b;
+}
+
+	</style>
+
+</head>
+
+<body>
+
+	<!--PreLoader-->
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
+
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.html">
+								<img src="assets/img/LG1.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								</li>
+								<li><a href="about.html">About</a>
+								<li><a href="contact.html">Contact</a></li>
+								<li class="current-list-item"><a href="#">Shop</a>
+								</li>
+								</li>
+								<li>
+								<div class="header-icons">
+										<a id="login-check" class="login-icon" href="#" title="Login" onclick="handleLoginCheck()"><i
+												class="fas fa-user"></i></a>
+
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Fresh and Organic</p>
+						<h1>Shop</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- products -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="product-filters">
+						<ul>
+							<li class="active" data-filter="*" id="cat">All</li>
+							<li data-filter=".cinnamon">Cinnamon</li>
+							<li data-filter=".pepper">Pepper</li>
+							<li data-filter=".cloves">Cloves</li>
+							<li data-filter=".nutmeg">Nutmeg</li>
+							<li data-filter=".maize">Maize</li>
+							<li data-filter=".cardamom">Cardamom</li>
+							<li data-filter=".coconut">Coconut Products</li>
+							<li data-filter=".beetlenut">Beetle Nut</li>
+							<li data-filter=".other">Other</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Category Description and Image Display -->
+			<div id="category-description" class="category-description">
+				<!-- Description will be dynamically added here -->
+				<img id="category-image" class="category-image" src="" alt="Category Image" />
+				<p id="category-text"></p> <!-- Category description will be added here -->
+			</div>
+			<div id="product-list" class="product-list">
+				<!-- Products will be loaded here by JavaScript -->
+			</div>
+
+		</div>
+	</div>
+	<!-- end products -->
+
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Spice World brings you the finest handpicked spices, rich in aroma, purity, and taste —
+							straight from farm to kitchen.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>D/83, Mawanella Road, Hemmathagama 04, Sri Lanka.</li>
+							<li>spicestoworld@gmail.com</li>
+							<li>+94 777 567 123</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="services.html">Shop</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/+94777567123" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+  <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp" />
+  <span>Chat with Us</span>
+</a>
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2025 - Spice World</a>, All Rights Reserved.<br>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+
+	<!-- jquery -->
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- count down -->
+	<script src="assets/js/jquery.countdown.js"></script>
+	<!-- isotope -->
+	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="assets/js/main.js"></script>
+
+	<script src="assets/JSfiles/shop.js"></script>
+		<script src="assets/js/all.js"></script>
+
+
+
+</body>
+
+</html>

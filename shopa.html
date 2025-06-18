@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop - Spice World</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/LG1.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<style>
+		/* Container Styling */
+		.product-addition-section {
+			background-color: #f9f9f9;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			border-radius: 10px;
+			margin-top: 100px;
+		}
+
+		/* Heading */
+		.product-addition-section h2 {
+			font-size: 28px;
+			font-weight: bold;
+			color: #333;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		/* Form styling */
+		.product-addition-section form {
+			max-width: 600px;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Input Fields */
+		.product-addition-section .form-group {
+			margin-bottom: 20px;
+		}
+
+		.product-addition-section .form-group label {
+			font-size: 16px;
+			font-weight: bold;
+			color: #555;
+		}
+
+		.product-addition-section .form-control {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			transition: border-color 0.3s ease;
+		}
+
+		.product-addition-section .form-control:focus {
+			border-color: #0056b3;
+			outline: none;
+		}
+
+		/* Select Dropdown */
+		.product-addition-section .form-control[type="select"] {
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+
+
+
+
+		/* Submit Button */
+		.product-addition-section .btn {
+			background-color: #006a1e;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.product-addition-section .btn:hover {
+			background-color: #004085;
+		}
+
+		.product-addition-section .btn {
+			background-color: #006a1e;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.product-addition-section .btn:hover {
+			background-color: #004085;
+		}
+
+		.form-group input {
+			width: 200px;
+			height: 50px;
+		}
+
+		.form-control {
+			width: 200px;
+			height: 50px;
+		}
+
+
+
+		/* File Upload Button */
+		.product-addition-section input[type="file"] {
+			padding: 8px 12px;
+			border-radius: 5px;
+			background-color: #f1f1f1;
+			border: 1px solid #ddd;
+		}
+
+		.product-addition-section input[type="file"]:focus {
+			border-color: #0056b3;
+		}
+
+		/* Form Spacing */
+		.product-addition-section .form-group {
+			margin-bottom: 20px;
+		}
+
+		.footer-area {
+			margin-top: -80px;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.product-addition-section form {
+				padding: 20px;
+				width: 100%;
+			}
+		}
+
+		.product-filters {
+			margin-top: -100px;
+		}
+
+		.product-card {
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			padding: 10px;
+			margin: 10px;
+			width: 200px;
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+		}
+
+		#product-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			justify-content: center;
+		}
+
+		.product-box {
+			width: 250px;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			text-align: center;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s;
+		}
+
+		.product-box:hover {
+			transform: scale(1.05);
+		}
+
+		.product-image {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 10px;
+		}
+
+		.product-name {
+			font-size: 18px;
+			font-weight: bold;
+			margin-top: 15px;
+		}
+
+		.product-code,
+		.product-price,
+		.product-category {
+			font-size: 13px !important;
+			color: #555;
+			margin-top: 10px;
+		}
+
+		.AA {
+			color: #00ff48 !important;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 7px;
+		}
+
+		.AA1 {
+			font-size: 50px;
+			font-weight: 900;
+			color: #fff;
+			margin: 0;
+			margin-top: 20px;
+		}
+
+		body {
+			overflow-y: scroll !important;
+		}
+
+
+		.update-btn,
+		.delete-btn {
+			padding: 10px 20px;
+			margin-top: 10px;
+			margin-right: 5px;
+			cursor: pointer;
+			border: none;
+			border-radius: 5px;
+		}
+
+		.update-btn {
+			background-color: #006a1e;
+			/* Green for Update */
+			color: white;
+		}
+
+		.delete-btn {
+			background-color: #f44336;
+			/* Red for Delete */
+			color: white;
+		}
+
+		.update-btn:hover,
+		.delete-btn:hover {
+			opacity: 0.8;
+		}
+
+		.whatsapp-float {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			background-color: #25D366;
+			color: white;
+			padding: 10px 15px;
+			border-radius: 25px;
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			font-family: Arial, sans-serif;
+			font-weight: bold;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			transition: background-color 0.3s;
+			z-index: 1000;
+		}
+
+		.whatsapp-float img {
+			margin-right: 8px;
+		}
+
+		.whatsapp-float:hover {
+			background-color: #1ebc5b;
+		}
+
+		/* Smaller buttons on phones */
+.fixed-size-btn {
+    width: 150px !important; /* reduced width */
+    height: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+		/* Smaller buttons on phones */
+		@media (max-width: 576px) {
+			.fixed-size-btn {
+				width: 120px;
+				height: 40px;
+				font-size: 12px;
+				padding: 0 8px;
+			}
+		}
+
+		/* Larger buttons on laptops and up */
+		@media (min-width: 992px) {
+			.fixed-size-btn {
+				width: 180px;
+				height: 50px;
+				font-size: 16px;
+				padding: 0 12px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!--PreLoader-->
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
+
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="indexa.html">
+								<img src="assets/img/LG1.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a href="indexa.html">Home</a></li>
+								</li>
+								<li><a href="abouta.html">About</a>
+								<li><a href="contacta.html">Contact</a></li>
+								<li class="current-list-item"><a href="#">Shop</a>
+								</li>
+								</li>
+								<li>
+									<div class="header-icons">
+										<a id="login-check" class="login-icon" href="#" title="Login"
+											onclick="handleLoginCheck()"><i class="fas fa-user"></i></a>
+
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div cl ass="breadcrumb-text">
+						<p class="AA">Fresh and Organic</p>
+						<h1 class="AA1">Shop</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+
+	<!-- Product Addition Section -->
+	<div class="product-addition-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-lg-8 offset-lg-2 text-center">
+							<div class="section-title">
+								<h3><span class="orange-text">Add</span> New Products</h3>
+								</p>
+							</div>
+						</div>
+					</div>
+					<form id="productForm" enctype="multipart/form-data">
+						<!-- Product Name -->
+						<div class="form-group">
+							<label for="productName">Product Name</label>
+							<input type="text" class="form-control" id="productName" name="product_name">
+						</div>
+
+						<!-- Product Code -->
+						<div class="form-group">
+							<label for="productCode">Product Stock(Kg)</label>
+							<input type="text" class="form-control" id="productCode" name="product_code">
+						</div>
+
+						<!-- Product Price -->
+						<div class="form-group">
+							<label for="productPrice">Product Price (per Kg)</label>
+							<input type="number" class="form-control" id="productPrice" name="product_price">
+						</div>
+
+						<!-- Product Category -->
+						<div class="form-group">
+							<label for="productCategory">Product Category</label>
+							<select class="form-control" id="productCategory" name="product_category">
+								<option value="cinnamon">Cinnamon</option>
+								<option value="pepper">Pepper</option>
+								<option value="cloves">Cloves</option>
+								<option value="nutmeg">Nutmeg</option>
+								<option value="maize">Maize</option>
+								<option value="cardamom">Cardamom</option>
+								<option value="coconut">Coconut</option>
+								<option value="beetlenut">Beetlenut</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+
+						<!-- Product Image -->
+						<div class="form-group">
+							<label for="productImage">Product Image</label>
+							<input type="file" class="form-control" id="productImage" name="product_image"
+								accept="image/*">
+							<input type="file" class="form-control" id="productImage1" name="product_image_2"
+								style="margin-top: 5px;" accept="image/*">
+						</div>
+						<!-- Button Section -->
+						<div class="d-flex justify-content-between flex-wrap mt-3">
+							<div class="d-flex flex-wrap align-items-start">
+								<button type="submit" class="btn btn-primary me-2 mb-2 responsive-btn fixed-size-btn"
+									id="addBTN">Add Product</button>
+								<button type="button" class="btn btn-success me-2 mb-2 responsive-btn fixed-size-btn"
+									id="update-btn" hidden>Update Product</button>
+								<button type="button" class="btn btn-success mb-2 responsive-btn fixed-size-btn"
+									id="clear-btn" style="margin-left: 20px;">Clear Fields</button>
+							</div>
+							<div class="mb-2">
+								<button type="button" class="btn btn-success1 responsive-btn fixed-size-btn"
+									id="print-btn">Print</button>
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Product Display Section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="product-filters">
+						<ul>
+							<li class="active" data-filter="*" id="cat">All</li>
+
+							<li data-filter=".cinnamon">Cinnamon</li>
+							<li data-filter=".pepper">Pepper</li>
+							<li data-filter=".cloves">Cloves</li>
+							<li data-filter=".nutmeg">Nutmeg</li>
+							<li data-filter=".maize">Maize</li>
+							<li data-filter=".cardamom">Cardamom</li>
+							<li data-filter=".coconut">Coconut Products</li>
+							<li data-filter=".beetlenut">Beetle Nut</li>
+							<li data-filter=".other">Other</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="product-list" class="product-list">
+				<!-- Products will be loaded here by JavaScript -->
+			</div>
+
+
+
+			<!-- More products for other categories go here -->
+		</div>
+	</div>
+	</div>
+
+
+
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Spice World brings you the finest handpicked spices, rich in aroma, purity, and taste —
+							straight from farm to kitchen.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>D/83, Mawanella Road, Hemmathagama 04, Sri Lanka.</li>
+							<li>spicestoworld@gmail.com</li>
+							<li>+94 777 567 123</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="indexa.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="services.html">Shop</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2025 - Spice World</a>, All Rights Reserved.<br>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="https://www.facebook.com/profile.php?id=61575938356788" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://x.com/spicetoworld" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/spicestoworld?igsh=NThia3c4ZDhhNjFu" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="linkedin.com/in/spice-world-436494185" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+
+	<!-- jquery -->
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- count down -->
+	<script src="assets/js/jquery.countdown.js"></script>
+	<!-- isotope -->
+	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="assets/js/main.js"></script>
+
+	<script src="assets/JSfiles/shopa.js"></script>
+	<script src="assets/js/all.js"></script>
+
+
+	<script>
+		document.getElementById('print-btn').addEventListener('click', function () {
+			window.location.href = 'report.html'; // Replace with your target page
+		});
+	</script>
+</body>
+
+</html>

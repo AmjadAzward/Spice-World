@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Register - Spice World</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/LG1.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<style>
+		.hero-bg {
+			background-image: url(assets/img/BG5.jpg);
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+			overflow-y: hidden;
+		}
+
+		.contact-form input[type="text"],
+		.contact-form input[type="email"],
+		.contact-form input[type="password"] {
+			width: 100%;
+			padding: 8px !important;
+			margin-bottom: 15px;
+			border-radius: 5px;
+			border: 1px solid #ddd;
+			font-size: 16px;
+		}
+
+		.contact-form input[type="submit"] {
+			width: 100%;
+			padding: 8px;
+			background-color: #00ff48;
+			border: none;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 12px !important;
+		}
+
+		.form-title h2 {
+			font-size: 24px;
+			font-weight: bold;
+			color: #00ff48;
+		}
+
+		.form-title p {
+			font-size: 16px;
+			color: #f2fcf5;
+		}
+
+		.contact-form input[type="submit"]:hover {
+			background-color: #0056b3;
+		}
+
+		.form-footer p {
+			margin-top: 10px;
+			color: #f2fcf5;
+		}
+
+		.form-footer a {
+			color: #00ff48;
+		}
+
+		.contact-form input {
+			width: 100% !important;
+			max-width: 400px !important;
+			margin-top: -7px !important;
+			margin-bottom: 4px !important;
+			padding: 8px !important;
+		}
+
+		.form-title p {
+	margin-top: 1px !important; /* Add this line to increase the gap */
+	
+}
+
+
+/* On large screens (992px and up), align content more to the left */
+@media (min-width: 992px) {
+  .hero-area.hero-bg {
+    justify-content: flex-start; /* align left */
+    padding-left: 60px;
+    margin-left: -155px; /* increased from -130px to -200px */
+  }
+}
+
+
+
+	</style>
+</head>
+
+<body>
+
+	<!--PreLoader-->
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.html">
+								<img src="assets/img/LG1.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="#">Home</a>
+								</li>
+								<li><a href="about.html">About</a></li>
+								</li>
+								<li><a href="contact.html">Contact</a></li>
+								<li><a href="shop.html">Shop</a>
+								</li>
+								<li>
+									<div class="header-icons">
+										<a id="login-check" class="login-icon" href="#" title="Login" onclick="handleLoginCheck()"><i
+												class="fas fa-user"></i></a>
+
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- hero area -->
+	<div class="hero-area hero-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<!-- Login Form -->
+							<div class="contact-from-section mt-150 mb-150">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-6 offset-lg-3">
+											<div class="form-title text-center">
+												<h2>Create Your Account</h2>
+												<p>Please fill in the details to create your account to get updated
+													about us</p>
+											</div>
+											<div id="form_status"></div>
+											<div class="contact-form">
+												<form id="register-form">
+													<p><input type="text" placeholder="Full Name" name="full_name"
+															id="full_name" required></p>
+													<p><input type="email" placeholder="Email" name="email" id="email"
+															required></p>
+													<p><input type="password" placeholder="Password" name="password"
+															id="password" required></p>
+													<p><input type="password" placeholder="Confirm Password"
+															name="confirm_password" id="confirm_password" required></p>
+													<p><input type="submit" value="Register"></p>
+												</form>
+												<!-- Custom Popup -->
+												<div id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+												background:#fff; border:1px solid #ccc; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.3); z-index:9999;">
+													<p id="popup-message" style="margin: 0 0 10px;"></p>
+													<button onclick="closePopup()">OK</button>
+												</div>
+												<div id="overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+												background:rgba(0,0,0,0.5); z-index:9998;"></div>
+											</div>
+											<div class="form-footer">
+												<p>Already have an account? <a href="login.html">Login here</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- end hero area -->
+
+	<!-- jquery -->
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- count down -->
+	<script src="assets/js/jquery.countdown.js"></script>
+	<!-- isotope -->
+	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="assets/js/main.js"></script>
+
+	<script src="assets/JSfiles/register.js"></script>
+
+	<script src="assets/js/all.js"></script>
+
+</body>
+
+</html>

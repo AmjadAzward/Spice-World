@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+    <!-- title -->
+    <title>Login - Spice World</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/LG1.png">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <style>
+
+        		.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  margin-right: 8px;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebc5b;
+}
+
+
+        html, body {
+  overflow-y: hidden;
+}
+
+.contact-from-section {
+  margin-top: 150px !important; /* smaller top margin to move form up */
+  margin-right: 20px;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- logo -->
+                        <div class="site-logo">
+                            <a href="indexa.html">
+                                <img src="assets/img/LG1.png" alt="">
+                            </a>
+                        </div>
+                        <!-- logo -->
+
+                        <!-- menu start -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="current-list-item"><a href="#">Home</a>
+                                </li>
+                                <li><a href="abouta.html">About</a></li>
+                                </li>
+                                <li><a href="contacta.html">Contact</a></li>
+                                <li><a href="shopa.html">Shop</a>
+                                </li>
+                                <li>
+                                    <div class="header-icons">
+										<a id="login-check" class="login-icon" href="#" title="Login" onclick="handleLoginCheck()"><i
+												class="fas fa-user"></i></a>
+
+									</div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu"></div>
+                        <!-- menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="hero-area hero-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 offset-lg-2 text-center">
+        <div class="hero-text">
+          <div class="hero-text-tablecell">
+            <div class="contact-from-section mt-100 mb-100"> <!-- reduced margin top/bottom -->
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-sm-10 col-md-7 col-lg-5 offset-sm-1 offset-md-2 offset-lg-3"> <!-- smaller col -->
+
+                    <div id="form_status"></div>
+                    <div class="contact-form">
+
+                      <div id="login-success-box" style="max-width: 300px; margin: 20px auto; background: #f9f9f9; padding: 12px; border-radius: 6px; box-shadow: 0 0 6px rgba(0,0,0,0.1); font-family: Arial, sans-serif; text-align: center;">
+                        <h2 style="color:black; font-size: 18px; margin-bottom: 6px; font-weight: bold;">
+                          ✅ You have successfully logged in
+                        </h2>
+                        <p style="margin-bottom: 15px; font-size: 13px;">
+                          Do you need to <a onclick="handleLogout()" style="color: #E53935; cursor: pointer; text-decoration: underline;">Logout</a>?
+                        </p>
+                        <hr style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 8px; font-size: 14px;">Change Password</h3>
+
+                        <form id="change-password-form" onsubmit="changePassword(event)">
+                          <input type="password" id="current-password" name="current_password" placeholder="Current Password" required autocomplete="off" 
+                            style="width: 100%; padding: 6px; margin: 4px 0; border-radius: 4px; border: 1px solid #ccc; font-size: 13px;">
+                          <input type="password" id="new-password" name="new_password" placeholder="New Password" required autocomplete="off" 
+                            style="width: 100%; padding: 6px; margin: 4px 0; border-radius: 4px; border: 1px solid #ccc; font-size: 13px;">
+                          <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm New Password" required autocomplete="off" 
+                            style="width: 100%; padding: 6px; margin: 10px 0 15px 0; border-radius: 4px; border: 1px solid #ccc; font-size: 13px;">
+                          <button type="submit" style="width: 100%; padding: 8px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                            Change Password
+                          </button>
+                        </form>
+                      </div>
+
+                      <div id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+                        background:#fff; border:1px solid #ccc; padding:12px; box-shadow:0 0 8px rgba(0,0,0,0.3); z-index:9999; text-align:center;">
+                        <p id="popup-message" style="margin-bottom:8px; font-size: 13px;"></p>
+                        <button onclick="closePopup()" style="padding: 5px 10px; cursor:pointer; font-size: 13px;">OK</button>
+                      </div>
+                      <div id="overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+                        background:rgba(0,0,0,0.5); z-index:9998;"></div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+
+<div id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+  background:#fff; border:1px solid #ccc; padding:15px; box-shadow:0 0 10px rgba(0,0,0,0.3); z-index:9999; text-align:center;">
+  <p id="popup-message" style="margin-bottom:10px;"></p>
+  <button onclick="closePopup()" style="padding: 6px 12px; cursor:pointer;">OK</button>
+</div>
+<div id="overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.5); z-index:9998;"></div>
+
+
+    <!-- end hero area -->
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- count down -->
+    <script src="assets/js/jquery.countdown.js"></script>
+    <!-- isotope -->
+    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <!-- waypoints -->
+    <script src="assets/js/waypoints.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- magnific popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- mean menu -->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!-- sticker js -->
+    <script src="assets/js/sticker.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/JSfiles/login.js"></script>
+    <script src="assets/js/all.js"></script>
+      
+    <script>
+function showPopup(message, type = 'success', autoClose = false, closeDelay = 3000) {
+    const existingOverlay = document.querySelector('.modal-overlay');
+    if (existingOverlay) existingOverlay.remove();
+
+    const modalOverlay = document.createElement('div');
+    modalOverlay.classList.add('modal-overlay'); // add class for easier handling
+    const modalBox = document.createElement('div');
+    const msgPara = document.createElement('p');
+    const closeButton = document.createElement('button');
+
+    msgPara.textContent = message;
+    closeButton.textContent = 'Close';
+
+    modalBox.appendChild(msgPara);
+    modalBox.appendChild(closeButton);
+    modalOverlay.appendChild(modalBox);
+    document.body.appendChild(modalOverlay);
+
+    Object.assign(modalOverlay.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: '9999'
+    });
+
+    Object.assign(modalBox.style, {
+        backgroundColor: '#fff',
+        padding: '20px',
+        borderRadius: '10px',
+        textAlign: 'center',
+        boxShadow: '0 0 15px rgba(0, 0, 0, 0.4)',
+        minWidth: '280px',
+        color: type === 'success' ? '#4CAF50' : '#E53935',
+        fontFamily: 'Arial'
+    });
+
+    Object.assign(closeButton.style, {
+        marginTop: '15px',
+        padding: '8px 16px',
+        border: 'none',
+        backgroundColor: type === 'success' ? '#4CAF50' : '#E53935',
+        color: '#fff',
+        cursor: 'pointer',
+        borderRadius: '5px'
+    });
+
+    closeButton.addEventListener('click', () => modalOverlay.remove());
+
+    if (autoClose) {
+        setTimeout(() => modalOverlay.remove(), closeDelay);
+    }
+}
+
+function changePassword(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const currentPassword = document.getElementById("current-password").value.trim();
+    const newPassword = document.getElementById("new-password").value.trim();
+    const confirmPassword = document.getElementById("confirm-password").value.trim();
+    const email = localStorage.getItem("email1");
+
+    const submitButton = document.querySelector("#change-password-form button[type='submit']");
+    submitButton.disabled = true; // Disable the button during processing
+
+    console.log("Email from localStorage:", email);
+
+    // Validations
+    if (!currentPassword || !newPassword || !confirmPassword) {
+        showPopup("Please fill out all fields.", "error");
+        submitButton.disabled = false;
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        showPopup("The new password and confirmation do not match.", "error");
+        submitButton.disabled = false;
+        return;
+    }
+
+    if (currentPassword === newPassword) {
+        showPopup("New password must be different from current password.", "error");
+        submitButton.disabled = false;
+        return;
+    }
+
+    if (newPassword.length < 6) {
+        showPopup("New password must be at least 6 characters.", "error");
+        submitButton.disabled = false;
+        return;
+    }
+
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("current_password", currentPassword);
+    formData.append("new_password", newPassword);
+    formData.append("confirm_password", confirmPassword);
+
+    // Send request to PHP backend
+    fetch("change_password.php", {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            showPopup(data.message, data.success ? "success" : "error");
+            if (data.success) {
+                document.getElementById("change-password-form").reset();
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            showPopup("Something went wrong. Please try again.", "error");
+        })
+        .finally(() => {
+            submitButton.disabled = false; // Re-enable button after request
+        });
+}
+
+function handleLogout() {
+    // Create modal elements
+    var modal = document.createElement("div");
+    var modalContent = document.createElement("div");
+    var closeBtn = document.createElement("span");
+    var modalHeader = document.createElement("h2");
+    var modalText = document.createElement("p");
+    var confirmBtn = document.createElement("button");
+    var cancelBtn = document.createElement("button");
+    var styleTag = document.createElement("style");
+
+    // Set modal attributes and text content
+    modal.id = "logoutModal";
+    modal.classList.add("modal");
+    modalContent.classList.add("modal-content");
+
+    closeBtn.classList.add("close-btn");
+    closeBtn.innerHTML = "&times;";
+    modalHeader.innerHTML = "Logout Confirmation";
+    modalText.innerHTML = "Are you sure you want to log out?";
+    confirmBtn.innerHTML = "Yes, log me out";
+    cancelBtn.innerHTML = "Cancel";
+
+    // Append elements
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(modalHeader);
+    modalContent.appendChild(modalText);
+    modalContent.appendChild(confirmBtn);
+    modalContent.appendChild(cancelBtn);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    document.head.appendChild(styleTag);
+
+    // Add responsive and modal styles
+    styleTag.innerHTML = `
+        .modal {
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .modal-content button:nth-of-type(1) {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .modal-content button:nth-of-type(2) {
+            background-color: #f44336;
+            color: white;
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                margin: 70% auto; /* pushed a bit more down */
+                padding: 15px;
+                width: 95%;
+            }
+
+            .modal-content h2 {
+                font-size: 16px;
+            }
+
+            .modal-content p {
+                font-size: 13px;
+            }
+
+            .modal-content button {
+                font-size: 13px;
+                padding: 8px 16px;
+            }
+
+            .close-btn {
+                font-size: 24px;
+                right: 10px;
+            }
+        }
+    `;
+
+    // Add event listeners
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+        modal.remove();
+    });
+
+    cancelBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+        modal.remove();
+    });
+
+    confirmBtn.addEventListener("click", function () {
+        // Clear localStorage
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('email');
+        localStorage.removeItem('email1');
+
+        // Redirect to login page
+        window.location.href = "login.html";
+    });
+}
+</script>
+
+
+</body>
+
+</html>
