@@ -7,6 +7,7 @@ A real-world deployed web application designed for a client to manage their whol
 
 ![Screenshot](https://raw.githubusercontent.com/AmjadAzward/Spice-World/main/Images/Screenshot%202025-06-18%20161121.png)
 
+![Screenshot](https://raw.githubusercontent.com/AmjadAzward/Spice-World/main/Images/Screenshot%202025-06-18%20161139.png)
 
 ---
 
