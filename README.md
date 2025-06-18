@@ -1,3 +1,4 @@
+![Screenshot](https://raw.githubusercontent.com/AmjadAzward/Spice-World/main/Images/Screenshot%202025-06-18%20161107.png)
 
 # 🌶️ SPICE WORLD - Wholesale Spice System
 
