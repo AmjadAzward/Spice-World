@@ -3,6 +3,8 @@
 
 A real-world deployed web application designed for a client to manage their wholesale spice business. The system is branded as **SPICE WORLD** and built to optimize client management, order processing, invoicing, and customer interaction.
 
+[Screenshot](https://raw.githubusercontent.com/AmjadAzward/Spice-World/main/Images/Screenshot%202025-06-18%20161107.png)
+
 ---
 
 ## 🚀 Features
