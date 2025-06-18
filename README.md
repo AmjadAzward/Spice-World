@@ -1,30 +1,32 @@
+
+#  SPICE WORLD - Wholesale Spice System
+
+A real-world deployed web application designed for a client to manage their wholesale spice business. The system is branded as **SPICE WORLD** and built to optimize client management, order processing, invoicing, and customer interaction.
+
 ![Screenshot](https://raw.githubusercontent.com/AmjadAzward/Spice-World/main/Images/Screenshot%202025-06-18%20161107.png)
 
 ![Screenshot](https://raw.githubusercontent.com/AmjadAzward/Spice-World/main/Images/Screenshot%202025-06-18%20161121.png)
 
-# 🌶️ SPICE WORLD - Wholesale Spice System
-
-A real-world deployed web application designed for a client to manage their wholesale spice business. The system is branded as **SPICE WORLD** and built to optimize client management, order processing, invoicing, and customer interaction.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🧾 Invoice generation with download option
-- 📧 Email notifications using **PHP Mailer**  
+-  Invoice generation with download option
+-  Email notifications using **PHP Mailer**  
   - Used for **password recovery (Forgot Password)**  
   - Used for **inquiry response system**
-- 📍 Customer location access (for delivery optimization)
-- 🔐 Admin and customer login system
-- 🧑‍💼 User account creation, profile updates
-- 📦 Product listing, stock tracking, and order history
-- 🌐 SEO-optimized for better search visibility
-- 📱 **Mobile-responsive interface**
-- 📊 Dashboard with order and client summaries
+-  Customer location access (for delivery optimization)
+-  Admin and customer login system
+-  User account creation, profile updates
+-  Product listing, stock tracking, and order history
+-  SEO-optimized for better search visibility
+-  **Mobile-responsive interface**
+-  Dashboard with order and client summaries
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript  
 - **Backend**: PHP  
@@ -34,9 +36,9 @@ A real-world deployed web application designed for a client to manage their whol
 
 ---
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
-### ⚙️ Prerequisites
+###  Prerequisites
 
 - [XAMPP](https://www.apachefriends.org/index.html) (or WAMP) for local PHP server  
 - [Oracle Database](https://www.oracle.com/database/technologies/) with SQL Developer  
@@ -93,13 +95,13 @@ A real-world deployed web application designed for a client to manage their whol
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * For **email functions**, ensure SMTP credentials are valid (use Gmail app passwords or enable access for less secure apps).
 * Refer to the **project report** for complete hardware/software integration and logical flow descriptions.
 
 ---
 
-## 📄 License
+##  License
 
 Developed as a client project. Use is restricted to the intended client organization and not licensed for public redistribution.
